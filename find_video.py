@@ -5,7 +5,7 @@ def find_video(channel):
   url=[]
   #channel = "https://www.youtube.com/channel/UC14zSCww91iy_JMaM8aXImQ"
   #print("test")
-  html = requests.get(channel + "/recent", cookies={'CONSENT': 'YES+42'}).text
+  html = requests.get(channel + "/recent?cbrd=1&ucbcb=1", cookies={'CONSENT': 'YES+42'}).text
   
   #info = re.search('(?<={"label":").*?(?="})', html).group()
   info = html.split('"}}},"publishedTimeText":{"simpleText":"')#skip the first part of the page
